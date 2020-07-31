@@ -23,17 +23,15 @@ body{
     align-items: center;
 }
 
-.containers{
-    display: inline-block;
-}
-
 .container1{
     display: inline-block;
+    vertical-align: bottom;
     background-color: var(--color-container);
     padding: 3em;
-    padding-right: 4em;
+    padding-right: 6em;
     border-radius: 6px;
     border-top-right-radius: 40%;
+    margin-right: 2em;
 }
 
 .logo{
@@ -44,28 +42,38 @@ body{
 .logo img{
     width: 100%;
     margin-bottom: 1em;
+    margin-left: 5px;
 }
 
 .icons{
     display: flex;
     align-items: center;
+    justify-content: start;
 }
 
 .icons button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background: var(--color-fondo);
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border: none;
-    border-radius: 10px;
+    border-radius: 5px;
     margin: 5px;
 }
+
+.icons img{
+    width: 80%;
+}
+
 .container2{
+    vertical-align: bottom;
     display: inline-block;
-    padding: 1em 3em;
+    padding: 1.5em 3em;
     background-color: var(--color-container);
     border-radius: 6px;
     position: relative;
-    
 }
 
 .barra-comentario{
@@ -80,8 +88,7 @@ body{
     border-bottom-right-radius: 0px;
     justify-content: center;
     margin: 0px;
-    cursor: pointer;
-    
+    cursor: pointer;   
 }
 
 .barra-comentario::after{
@@ -94,7 +101,6 @@ body{
     border-left: 8px solid transparent;
     bottom: -15px;
     right: 0px;
-
 }
 
 .barra{
@@ -128,7 +134,7 @@ body{
     height: 10px;
     background: white;
     border-radius: 50%;
-    margin: 1px;
+    margin: 2px;
 }
 #negrita{
     font-weight: 900;
@@ -137,4 +143,45 @@ body{
 #number{
     font-weight: 900;
     font-size: 25px;
+}
+
+@media screen and (max-width: 768px){
+    .containers{
+        display: inline-block;
+        text-align: center;
+        align-items: center;
+        
+    }
+    .container1{
+        display: inline-block;
+        margin-bottom: 2em;
+        margin-right: 0;
+    }
+    .container2{
+        display: block;
+    }
+    .barra{
+        width: 100%;
+    }
+
+    .barra-comentario{
+        box-sizing: border-box;
+        right: unset;
+        top: unset;
+        border-bottom-right-radius: 10px;
+        bottom: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+    .barra-comentario::after{
+        display: none;
+    }
+
+}
+@media screen and (max-width: 375px){
+    .container{
+        background: url(images/bg-mobile.png);
+        background-repeat: no-repeat;
+    }
 }
